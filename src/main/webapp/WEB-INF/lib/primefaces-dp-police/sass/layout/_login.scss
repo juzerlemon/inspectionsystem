@@ -1,0 +1,348 @@
+.main-bg {
+  background: url("\#{resource['primefaces-dp-police:images/images/finalbg.png']}") no-repeat center top;
+  background-size: cover;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+}
+
+.user-profile {
+  text-align: center;
+
+  font-size: 20px;
+  color: #fff;
+}
+
+.container {
+  position: relative;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*custom-menu*/
+.mn1 {
+  float: right;
+  margin-top: 116px;
+  margin-right: 210px;
+}
+
+.mn2 {
+  margin-left: 260px;
+  margin-top: 32px;
+}
+
+.mn3 {
+  margin-left: 200px;
+  margin-top: 8px;
+  width: 140px !important;
+  height: 140px !important;
+}
+
+.mn4 {
+  margin-left: 288px;
+  margin-top: -2px;
+}
+
+.cmn {
+  display: block;
+  background-color: #fff;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  padding: 33px 21px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 100px;
+  position: absolute;
+  margin-left: 464px;
+  font-size: 14px;
+  color: #db4d4c;
+  font-weight: normal !important;
+  box-shadow: 5px 10px 40px -10px #000;
+}
+
+.cmn-header {
+  font-size: 24px;
+  text-align: center;
+  padding: 30px;
+  line-height: 62px;
+}
+
+.clr {
+  clear: both;
+}
+
+.content {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 30px;
+}
+
+/*.cont-bg{
+	background:url(../../images/bubbles.png) no-repeat center top; 
+}*/
+h1 {
+  margin: 0px;
+  padding: 20px;
+  font-size: 32px;
+  color: #000;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.9);
+  text-align: center;
+  font-weight: 400;
+}
+
+h1 span {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  font-family: Georgia, serif;
+  padding-top: 5px;
+}
+
+/* Header Style */
+.header {
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  line-height: 24px;
+  font-size: 11px;
+  background: #000;
+  opacity: 0.9;
+  text-transform: uppercase;
+  z-index: 9999;
+  position: relative;
+  -moz-box-shadow: 1px 0px 2px #000;
+  -webkit-box-shadow: 1px 0px 2px #000;
+  box-shadow: 1px 0px 2px #000;
+}
+
+.header a {
+  padding: 0px 10px;
+  letter-spacing: 1px;
+  color: #ddd;
+  display: block;
+  float: left;
+}
+
+.header a:hover {
+  color: #fff;
+}
+
+.header span.right {
+  float: right;
+}
+
+.header span.right a {
+  float: none;
+  display: inline;
+}
+
+.more {
+  position: relative;
+  clear: both;
+  font-size: 11px;
+  padding: 20px 0px;
+  text-transform: uppercase;
+  width: 390px;
+  height: 55px;
+  margin: 0 auto;
+}
+
+.more ul {
+  display: block;
+  text-align: center;
+}
+
+.more ul li {
+  display: block;
+  padding: 4px 2px;
+  float: left;
+}
+
+.more ul li.selected a,
+.more ul li.selected a:hover {
+  background: #0099c5;
+  color: #fff;
+  text-shadow: none;
+  font-weight: bold;
+}
+
+.more ul li a {
+  color: #555;
+  float: left;
+  background: #fff;
+  width: 64px;
+  padding: 2px 5px;
+  -moz-box-shadow: 1px 1px 2px #aaa;
+  -webkit-box-shadow: 1px 1px 2px #aaa;
+  box-shadow: 1px 1px 2px #aaa;
+}
+
+.more ul li a:hover {
+  background: #000;
+  color: #fff;
+}
+
+.top-header-div {
+  width: 100%;
+  float: left;
+  position: fixed;
+  top: 0;
+  padding: 15px;
+}
+
+.content-main-div {
+  width: 100%;
+  float: left;
+  position: relative;
+  margin-top: 65px;
+}
+
+.footerr-div {
+  width: 100%;
+  float: left;
+  position: fixed;
+  bottom: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.logo-left-img {
+  width: 20%;
+  float: left;
+}
+
+.logo-right-img {
+  width: 20%;
+  float: right;
+}
+
+.user-img-div {
+  width: 5%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.user-img-div img {
+  border-radius: 3px;
+  border: 1px solid #8e3132;
+}
+
+.user-name-div {
+  font-size: 15px;
+  padding-top: 5px;
+}
+
+#particles-js {
+  width: 60%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.content-bg-divv {
+  position: absolute;
+  width: 50%;
+  left: 20%;
+  background-image: url("\#{resource['primefaces-dp-police:images/bg_center_fix.png']}");
+  background-size: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  padding: 0;
+  opacity: 0.5;
+}
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  /*#396c82;*/
+}
+
+/*------------------------Login-div------------------------------*/
+
+.login-div {
+  width: 100%;
+  float: left;
+  position: relative;
+  top: 355px;
+}
+
+.login-div .form-login {
+
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+
+}
+
+.login-div .form-control {
+  border: 1px solid transparent;
+}
+
+.login-div .form-control {
+  border-radius: 3px;
+}
+
+.login-div .input-sm {
+  background-color: rgba(0, 0, 0, 0.32);
+}
+
+::-webkit-input-placeholder { /* Chrome */
+  color: #fff !important;
+  text-align: right;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  color: #fff !important;
+  text-align: right;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: #fff !important;
+  opacity: 1;
+  text-align: right;
+}
+
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #fff !important;
+  opacity: 1;
+  text-align: right;
+}
+
+.login-btn-style {
+  color: #000;
+  background-color: #fff;
+  float: right;
+  border-radius: 3px;
+}
+
+.login-div .input-sm {
+  height: 49px;
+  margin: 20px 0;
+  color: #fff;
+  text-align: right;
+  padding-right: 16px;
+}
+
+.login-main-div {
+  margin-top: 60px;
+}
+
+.login-btn-style {
+  padding: 7px 25px !important;
+  height: auto !important;
+}

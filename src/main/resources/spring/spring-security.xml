@@ -1,0 +1,31 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xsi:schemaLocation="
+             http://www.springframework.org/schema/security
+             http://www.springframework.org/schema/security/spring-security.xsd
+             http://www.springframework.org/schema/beans
+             http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <global-method-security pre-post-annotations="enabled" secured-annotations="enabled"/>
+
+    <http use-expressions="true" auto-config="true">
+        <csrf disabled="true" />
+        <intercept-url pattern="/login.xhtml" access="permitAll()" />
+        <intercept-url pattern="/javax.faces.resource/**" access="permitAll()"/>
+        <intercept-url pattern="/**" access="authenticated" />
+        <form-login login-page="/login.xhtml"
+                             authentication-failure-url="/login.xhtml?error=true"
+                             default-target-url="/index.xhtml"
+                             username-parameter="username" password-parameter="password" />
+    </http>
+
+    <beans:bean id="customAuthenticationProvider"
+                class="ae.gov.dubaipolice.base.configs.CustomAuthenticationProvider">
+    </beans:bean>
+
+    <authentication-manager id="authenticationManager">
+        <authentication-provider ref="customAuthenticationProvider" />
+    </authentication-manager>
+
+</beans:beans>

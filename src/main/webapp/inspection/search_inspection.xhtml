@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<div class=" ">
+<!-- <h1 class="bukra-bold">نموذج بحث نظام التفتيش </h1>
+<p class="p-style-header"> حقول نموذج البحث</p> -->
+
+<h1 class="head bukra-bold ">حقول نموذج البحث </h1>
+<p:fieldset class="cust-fieldset-margin-top fieldset-div-style">
+	<div class="ui-g" dir="#{localeBean.language=='ar'?'rtl':'rtl'}">
+
+		<div class="ui-g-12 ui-md-2 ui-lg-2">
+			<p:outputLabel style="text-align:right" value="#{msg.department}" />
+		</div>
+		
+		<div class="ui-g-12 ui-md-10 ui-lg-4">
+			<p:selectOneMenu  style="width:80%" class="form-controlnew"  value="#{inspectionBean.searchgeneralDepartment}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItem noSelectionOption="true" 
+					itemLabel="#{msg.please_choose}" itemValue="#{null}" />
+				<f:selectItems value="#{inspectionBean.searchgeneralDepartments}" var="reg" itemLabel="#{reg.subordinateOrganization}" itemValue="#{reg}" />
+			</p:selectOneMenu>
+		</div>
+		<div class="ui-g-12 ui-md-2 ui-lg-2">
+			<p:outputLabel style="text-align:right" value="#{msg.year}" />
+		</div>
+		<div class="ui-g-12 ui-md-10 ui-lg-4">
+			<p:inputText styleClass="input-xlarge" value="#{inspectionBean.searchYear}" onkeyup="$(this).val($(this).val().replace(/[^0-9]/g, ''));" maxlength="8"></p:inputText>
+		</div>
+		<!-- <div class="ui-g-12 ui-md-2 ui-lg-1">
+				<p:outputLabel style="text-align:right"  value="#{msg.inspectionNumber}" />
+			 </div>
+			  <div class="ui-g-12 ui-md-10 ui-lg-5">
+						<p:inputText styleClass="input-xlarge" value="#{inspectionBean.inspectionNumber}" onkeyup="$(this).val($(this).val().replace(/[^0-9]/g, ''));"></p:inputText>
+			 </div> -->
+
+		<div class="ui-g-12 ui-md-2 ui-lg-2">
+			<p:outputLabel style="text-align:right" value="#{msg.date_from}" />
+		</div>
+		<div class="ui-g-12 ui-md-10 ui-lg-4">
+			<p:calendar pattern="dd/MM/yyyy" value="#{inspectionBean.fromDate}" readonlyInput="true" id="fromDate" widgetVar="fromDate" navigator="true" />
+		</div>
+		<div class="ui-g-12 ui-md-2 ui-lg-2">
+			<p:outputLabel style="text-align:right" value="#{msg.date_to}" />
+		</div>
+		<div class="ui-g-12 ui-md-10 ui-lg-4">
+			<p:calendar id="to_date" pattern="dd/MM/yyyy " readonlyInput="true" value="#{inspectionBean.toDate}" navigator="true" />
+		</div>
+		<div class="ui-g-12 ui-md-2 ui-lg-2">
+			<p:outputLabel style="text-align:right" value="#{msg.reportname}" />
+		</div>
+		<div class="ui-g-12 ui-md-10 ui-lg-4">
+			<p:inputText styleClass="input-xlarge" value="#{inspectionBean.reportName}" maxlength="20" />
+		</div>
+                <div class="ui-g-12 ui-md-2 ui-lg-2">
+			 
+		</div>
+		<div class="ui-g-12 ui-md-10 ui-lg-4">
+			 
+		</div>
+                  
+
+		<div class="btn-div-2 onlybtn" >
+		<p:commandButton id="searchId" process=":inspectionForm" style="margin-right: 10px;" value="#{msg.search}"  styleClass="green-btn-form btn btn-cancel btn-color-2" actionListener="#{inspectionBean.search}" update="inspection_table"
+				  />
+				
+			<p:commandButton  value="#{msg.new}" style="float:left;margin-right: 11px;" styleClass="green-btn-form btn btn-save  btn-color-2" target="_blank"
+				actionListener="#{inspectionBean.addNew}" process="@this" update=":inspectionForm"   />
+			
+			<!-- 	<p:commandButton process="@this" value="Report" style="float:left" styleClass="red-btn" actionListener="#{reportsBean.exportToFileFormat}"  immediate="true" icon="fa fa-search" ajax="false"/> -->
+		</div>
+	</div>
+</p:fieldset>
+</div>
+<h1 class="bukra-bold divheader">البيانات لتفاصيل البحث </h1>
+<!-- <p class="p-style-header">البيانات لتفاصيل البحث</p> -->
+<div style="margin-top: 35px;" dir="#{localeBean.language=='ar'?'rtl':'rtl'}">
+
+	<p:dataTable id="inspection_table" emptyMessage="#{msg.no_record_found}" styleClass="z-index: 111; text-align:center;"  
+		var="item" rows="10" selectionMode="single" rowKey="#{item.id}" rowIndexVar="index" value="#{inspectionBean.dataModel}"
+		 paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+		rowsPerPageTemplate="5,10,15" lazy="true">
+		<p:column headerText="م" style="width:5%">
+			<h:outputText value="#{index+1}"/>
+		</p:column>
+
+		<p:column headerText="#{msg.department}" styleClass="pt_one">
+			<h:outputText value="#{item.departmentGrp.subordinateOrganization}" />
+		</p:column>
+		<!-- <p:column headerText="#{msg.inspectionno}"><h:outputText value="#{item.inspectionId}" /></p:column> -->
+		<p:column headerText="#{msg.year}" style="text-align: center;">
+			<h:outputText value="#{item.inspectionYear}"/>
+		</p:column>
+
+		<p:column headerText="#{msg.reportname}" style="text-align: center;">
+			<h:outputText value="#{item.reportName}" />
+		</p:column>
+		<p:column headerText="#" style="width:12%">
+			<p:commandLink id="edit_id" styleClass="loader-class" actionListener="#{inspectionBean.editMainInspection(item)}" process="@this" update=":inspectionForm" >
+				<i class="fa fa-pencil" style="margin-left: 12px;color: #9b9b9b;" title="#{msg.edit}" />
+			</p:commandLink>
+			<p:commandLink id="view_id" styleClass="loader-class" actionListener="#{inspectionBean.viewMainInspection(item)}" process="@this" update=":inspectionForm" >
+				<i class="fa fa-file-text" style="margin-left: 12px;    color: #9b9b9b;" title="#{msg.view}" />
+			</p:commandLink>
+			<p:commandLink id="details_id" styleClass="loader-class" actionListener="#{inspectionBean.detailsMainInspection(item)}" process="@this" update=":inspectionForm" >
+				<i class="fa fa-address-book-o" style="margin-left: 12px;color: #9b9b9b;" title="#{msg.inspectiondetails}" />
+			</p:commandLink>
+			<!-- <p:commandLink actionListener="#{inspectionBean.detailsMainInspection(item)}" process="inspection_table" update=":inspectionForm, :inspection_table">
+				<i class="fa fa-trash" style="color: #c22627;" title="details" />
+			</p:commandLink> -->
+			<p:commandButton title=""  icon="fa fa-trash" style="    padding-left: 20px !important;color: #9b9b9b !important;
+              border: 0px !important;padding-right: 11px;margin-left: -5px;padding: 0px 8px 8px 0px;box-shadow: none !important;background: none !important;background-color:transparent;"  
+               value="" id="dltId" actionListener="#{inspectionBean.deleteItem(item)}"  target="_blank" process="inspectionForm:inspection_table" update="inspectionForm:inspection_table, inspectionForm:message">
+				<p:confirm style="height:150px;"    message="#{msg.delete_msg}"/>
+			</p:commandButton>
+			
+		</p:column>
+	</p:dataTable>
+</div>
+<h:body>
+</h:body>
+</html>

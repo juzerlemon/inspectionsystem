@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
+	<h1 class="head bukra-bold">حدد الحقول لإضافتها </h1>
+	<!-- <p class="p-style-header"> حدد الحقول لإضافتها</p> -->
+	<div class="  main-div-bg-other"   >
+	<div class="ui-g " style="padding-top: 30px !important; padding-bottom: 20px !important; margin-bottom: 35px;width: 100%; ">
+		<div class="ui-g-12 ui-md-2 ui-lg-2">
+			<p:outputLabel style="text-align:right"  value="#{msg.department}*" />
+		</div>
+		<div class="ui-g-12 ui-md-10 ui-lg-4">
+				<p:selectOneMenu id="departmentId" style="width:90%" required="true" requiredMessage="#{msg.err_msg_department}"
+					class="form-controlnew" value="#{inspectionBean.generalDepartment}" converter="omnifaces.SelectItemsConverter"> 
+					<f:selectItem noSelectionOption="true" itemLabel="#{msg.please_choose}" itemValue="#{null}" />
+					<f:selectItems value="#{inspectionBean.generalDepartments}" var="reg" itemLabel="#{reg.subordinateOrganization}" itemValue="#{reg}" />
+				</p:selectOneMenu>
+			</div>
+		
+		<!-- <div class="ui-g-12 ui-md-2 ui-lg-1">
+			<p:outputLabel style="text-align:right"  value="#{msg.inspectionNumber}*" />
+		</div>
+		<div class="ui-g-12 ui-md-10 ui-lg-5">
+			<p:inputText  style="text-align:right;" class="fullw txt-normal" value="#{inspectionMain.inspectionId}" required="true" requiredMessage="Please enter inspection number" onkeyup="$(this).val($(this).val().replace(/[^0-9]/g, ''));" >
+			</p:inputText> 
+		</div>-->
+		
+		<div class="ui-g-12 ui-md-2 ui-lg-2">
+			<p:outputLabel style="text-align:right"  value="#{msg.inspectionyear}*" />
+		</div>
+		<div class="ui-g-12 ui-md-10 ui-lg-4">
+		
+		<p:selectOneMenu value="#{inspectionMain.inspectionYear}" style="width:90%" styleClass="fullw" required="true" requiredMessage="#{msg.err_msg_year}">
+							<f:selectItem itemLabel="#{msg.please_choose}" itemValue="" />
+							<f:selectItems value="#{inspectionBean.years}" var="year" itemLabel="#{year}" itemValue="#{year}" />
+		</p:selectOneMenu>
+		</div>
+		<div class="ui-g-12 ui-md-2 ui-lg-2">
+			<p:outputLabel style="text-align:right"  value="#{msg.reportname}*" />
+		</div>
+		<div class="ui-g-12 ui-md-10 ui-lg-4">
+			<p:inputText  style="text-align:right;" class="fullw txt-normal" value="#{inspectionMain.reportName}" maxlength="30" required="true" requiredMessage="#{msg.err_msg_report}" />
+		</div>
+		
+	 </div>
+	</div>
+	<!-- <p class="p-style-header">نقطة التفتيش</p> -->
+	<h1 class="bukra-bold divheader ">نقطة التفتيش </h1>
+	<div class="  main-div-bg-other"   >
+	<div class="ui-g">
+		<p:panel id="pnl_inspection" styleClass="heading-design3" style="background-color: rgba(248, 248, 250, 0.55);">
+			 
+			<div class="ui-g">
+				<!-- <div class="ui-g-12 ui-md-2 ui-lg-2">
+					<p:outputLabel value="#{msg.pointno}*"  />
+				</div>
+				<div class="ui-g-12 ui-md-10 ui-lg-4">
+					<p:inputText class="fullw txt-normal" value="#{inspectionBean.inspectionpoint.inspectionId}"  onkeyup="$(this).val($(this).val().replace(/[^0-9]/g, ''));"/>
+				</div> -->
+				<div class="ui-g-12 ui-md-2 ui-lg-2">
+					<p:outputLabel value="#{msg.pointname}*" />
+				</div>
+				<div class="ui-g-12 ui-md-10 ui-lg-3">
+					<p:inputText class="fullw txt-normal" id="pointId" value="#{inspectionBean.inspectionpoint.pointName}" maxlength="30"/>
+					
+				</div>
+				
+				<div class="ui-g-12 ui-md-2 ui-lg-2">
+					
+				</div>
+				 
+				<div class="ui-g-12 ui-md-10 ui-lg-2">
+				<p:outputLabel value="#{msg.leader}" />
+				<p:selectBooleanCheckbox   value="#{inspectionBean.inspectionpoint.leaderBol}" >
+				<p:ajax listener="#{inspectionBean.updateLeadefFlag(inspectionBean.inspectionpoint.leaderBol)}"></p:ajax>
+				</p:selectBooleanCheckbox>
+					
+				</div>
+				
+				<div class="ui-g-12 ui-md-2 ui-lg-1">
+					
+				</div>
+				<div class="ui-g-12 ui-md-10 ui-lg-2">
+				<p:outputLabel value="#{msg.supervisor}" />
+				<p:selectBooleanCheckbox  value="#{inspectionBean.inspectionpoint.supervisorBol}">
+				<p:ajax listener="#{inspectionBean.updateSupervisorFlag(inspectionBean.inspectionpoint.supervisorBol)}"></p:ajax>
+				</p:selectBooleanCheckbox>
+					
+				</div>
+				
+				<div class="ui-g-12 ui-md-2 ui-lg-2">
+				</div>
+				<div class="ui-g-12 ui-md-10 ui-lg-4">
+					
+				</div>
+				<div class="ui-g-12 ui-md-2 ui-lg-4">
+					
+				</div>
+				<div class="ui-g-12 ui-md-10 ui-lg-2">
+					<p:commandButton value="#{msg.add_btn}" styleClass="green-btn-form btn btn-cancel btn-color-2" style="float:left;    margin-left: 15px;" actionListener="#{inspectionBean.addInspectionPoint}" process="@this,pointId" update="pnl_inspection,inspectionForm:message"   ></p:commandButton>
+				</div>
+				
+	         </div>
+	         
+	         <p:dataTable id="tbl_inspection" class="tbl-padding" dir="rtl" emptyMessage="#{msg.no_record_found}" value="#{inspectionBean.inspectionpointList}" style="padding:20px !important"
+				currentPageReportTemplate="{startRecord} إلى {endRecord} من {totalRecords}" var="inspection" paginator="#{inspectionBean.inspectionpointList.size() gt 5 ? 'true' : 'false'}" rows="10"
+				paginatorTemplate="{RowsPerPageDropdown} {LastPageLink}  {NextPageLink} {CurrentPageReport}  {PreviousPageLink} {FirstPageLink}" rowsPerPageTemplate="5" styleClass="width:100%"
+				paginatorPosition="bottom" rowIndexVar="index" rowKey="#{inspection.id}">
+				<p:column headerText="م" style="width:5%;text-align:center !important;">
+					<h:outputText class="txt-normal" value="#{index+1}" />
+				</p:column>
+				<p:column headerText="#{msg.pointname}" style="width:30%;text-align:center !important;" styleClass="pt_one">
+					<h:outputText class="txt-normal" value="#{inspection.pointName}" />
+				</p:column>
+				<p:column headerText="#{msg.leader}" style="width:30%;text-align:center !important;">
+				
+				<p:selectBooleanCheckbox value="#{inspection.leaderBol}" disabled="true"></p:selectBooleanCheckbox>
+					
+				</p:column>
+				
+				<p:column headerText="#{msg.supervisor}" style="width:30%;text-align:center !important;">
+				<p:selectBooleanCheckbox value="#{inspection.supervisorBol}" disabled="true"> </p:selectBooleanCheckbox>
+				</p:column>
+				<p:column headerText="#" style="width:10%;   text-align:center !important;">
+					<p:commandLink style="" styleClass="red-btn" actionListener="#{inspectionBean.editInspectionPoint(inspection)}" process=":inspectionForm:tbl_inspection" update=":inspectionForm:pnl_inspection">
+						<i class="fa fa-pencil" title="#{msg.edit}" />
+					</p:commandLink>
+					<!-- <p:commandLink style="float:right; padding-right: 10px;" styleClass="red-btn" actionListener="#{inspectionBean.deleteInspectionPoint(inspection)}" process=":inspectionForm:tbl_inspection"
+						update=":inspectionForm:pnl_inspection">
+						<i class="fa fa-trash" title="#{msg.delete}" />
+					</p:commandLink> -->
+				</p:column>
+			</p:dataTable>
+	</p:panel>
+	
+	<div class="btn-div-2 onlybtn" >
+			<p:commandButton style="float:left;    margin-right: 12px;" value="#{msg.back_btn}" styleClass="  green-btn-form btn btn-cancel btn-color-2" target="_blank" actionListener="#{inspectionBean.backToList}" process="@this" update=":inspectionForm" />
+			<p:commandButton style="float:left;    margin-right: 55px;"  process=":inspectionForm" value="#{msg.save_btn}" styleClass="  green-btn-form btn btn-cancel btn-color-2" actionListener="#{inspectionBean.save}" update=":inspectionForm" />
+		      
+		</div>
+	 
+	</div>
+	</div>
+	
+</h:body>
+</html>

@@ -1,0 +1,391 @@
+
+/* CSS Document */
+
+@media only screen and (min-width: 2000px) {
+.image {
+	top: 1015px;
+	position: relative;
+	width: 18%;
+	right: -618px;
+	-webkit-animation: spin 35s linear infinite;
+	-moz-animation: spin 35s linear infinite;
+	animation: spin 35s linear infinite;
+}
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1204px) and (max-width: 1895px) {
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+.menu-logo {
+	width: 14%;
+	margin-bottom: 20px;
+}
+.user-name-div {
+	width: fit-content;
+	float: left;
+	position: relative;
+	margin-left: 121px;
+	top: 17px;
+	background-color: #fff;
+	border-radius: 33px;
+	padding: 2px 20px;
+	font-size: 15px;
+	margin-right: 20px;
+}
+.div2 {
+	width: 100%;
+	top: 90px;
+}
+.content-div-1 {
+	width: 70%;
+}
+.main-header .user-image-div {
+	margin-right: -35px;
+}
+.cd-bouncy-nav {
+	max-width: 100%;
+	width: 88%;
+	left: 45%;
+}
+.bg-img3 {
+	background-size: 47%;
+}
+.heading-div {
+	width: 56%;
+}
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+.menu-logo {
+	width: 14%;
+	margin-bottom: 20px;
+}
+.user-name-div {
+	width: fit-content;
+	float: left;
+	position: relative;
+	margin-left: 121px;
+	top: 17px;
+	background-color: #fff;
+	border-radius: 33px;
+	padding: 2px 20px;
+	font-size: 15px;
+	margin-right: 20px;
+}
+.menu-toggle {
+	width: 32px;
+	height: 30px;
+	position: absolute;
+	top: 24px;
+	right: 208px;
+	cursor: pointer;
+	z-index: 100;
+}
+.main-header .user-image-div {
+	margin-right: -1px;
+}
+.div2 {
+	width: 100%;
+}
+.ca-menu li {
+	width: 23%;
+}
+.content-div-1 {
+	width: 79%;
+}
+.cd-bouncy-nav {
+	max-width: 100%;
+	width: 100%;
+	left: 40%;
+}
+.bg-img3 {
+	background-size: 47%;
+}
+.heading-div {
+	width: 69%;
+}
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+nav ul .menu-logo {
+	width: 17%;
+	margin-bottom: 20px;
+}
+nav ul {
+	padding: 0;
+	list-style: none;
+	margin: 8em auto;
+	text-align: center;
+}
+nav ul a {
+	font-size: 2em;
+}
+.main-header .user-name-div {
+	width: fit-content;
+	float: right;
+	position: relative;
+	margin-left: 30px;
+	top: 32px;
+	background-color: #fff;
+	border-radius: 33px;
+	padding: 2px 20px;
+	font-size: 11px;
+	margin-right: 12px;
+}
+.main-header .user-image-div {
+	width: 45px;
+	height: 45px;
+	border-radius: 50px;
+	float: right;
+	top: 49px;
+	position: relative;
+	margin-right: 10px;
+}
+.menu-toggle {
+	width: 25px;
+	height: 30px;
+	position: absolute;
+	top: 71px;
+	left: 28px;
+	cursor: pointer;
+	z-index: 50;
+}
+.one, .two, .three {
+	width: 100%;
+	height: 2px;
+	background: white;
+	margin: 4px auto;
+}
+.left-logo img {
+	width: 47%;
+	float: left;
+}
+.right-logo {
+	float: right;
+	top: 0;
+	position: absolute;
+	width: 57%;
+	right: 0;
+	padding-right: 8px;
+}
+.right-logo img {
+	width: 53%;
+	float: right;
+}
+.main-header .notification-div {
+	width: 27px;
+	float: left;
+	font-size: 23px;
+	color: #fff;
+	position: relative;
+	top: 29px;
+	right: -47px;
+}
+.footer-div {
+	position: fixed;
+	float: left;
+	margin-top: 6px;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+.menu-toggle.on .three {
+	-moz-transform: rotate(-45deg) translate(6px, -7px);
+	-ms-transform: rotate(-45deg) translate(6px, -7px);
+	-webkit-transform: rotate(-45deg) translate(6px, -7px);
+	transform: rotate(-45deg) translate(6px, -7px);
+}
+.content-div-1 {
+	width: 92%;
+	top: 0;
+}
+.ca-menu li {
+	width: 30%;
+}
+.div2 {
+	position: relative;
+	width: 100%;
+	top: 36px;
+	float: left;
+}
+.cd-section {
+	text-align: center;
+	position: absolute;
+	top: 72px;
+	left: 9px;
+	z-index: 50;
+}
+.cd-bouncy-nav a {
+	min-width: 73px;
+	padding: 6px 0px 0;
+	font-size: 13px;
+}
+.cd-bouncy-nav {
+	width: 100%;
+	max-width: none;
+}
+.cd-bouncy-nav li {
+	width: 25%;
+	margin-bottom: 12px;
+}
+.cd-bouncy-nav {
+	bottom: -234px;
+}
+.cd-bouncy-nav a::before {
+	width: 50px;
+	height: 50px;
+}
+.heading-div {
+	width: 100%;
+}
+.ca-menu {
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 39px;
+}
+.ca-menu ul li {
+	float: left;
+	width: 87px;
+	height: 87px;
+	padding: 13px 4px;
+}
+.main-content-area {
+	margin-top: 40px;
+}
+.ca-menu p {
+	text-align: center;
+	font-size: 11px;
+}
+.ca-menu svg {
+	font-size: 17px;
+}
+	
+.ca-menu ul li {
+    margin: 0 auto !important;
+    float: none !important;
+}	
+.login-div {
+	width: 100%;
+	float: left;
+	position: relative;
+	top: 140px;
+}
+	
+}
+
+/*-----------------------iPhone X------------------------------*/
+
+@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
+.footer-div {
+	position: fixed;
+	float: left;
+	margin-top: 46px;
+	width: 100%;
+	text-align: center;
+	bottom: 0;
+}
+.ca-menu ul li {
+	float: left;
+	width: 107px;
+	height: 107px;
+}
+.login-div {
+	width: 100%;
+	float: left;
+	position: relative;
+	top: 200px;
+}
+}
+
+/*-----------------------iPhone 8------------------------------*/
+
+@media only screen and (device-width : 375px) and (device-height : 667px) and (-webkit-device-pixel-ratio : 2) {
+.heading-div p {
+	font-size: 12px;
+	margin-bottom: 40px;
+}
+.ca-menu ul li {
+	float: left;
+	width: 106px;
+	height: 106px;
+}
+.footer-div {
+	position: fixed;
+	float: left;
+	margin-top: 6px;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+.login-div {
+	width: 100%;
+	float: left;
+	position: relative;
+	top: 140px;
+}
+}
+
+/*-----------------------iPhone 8 plus------------------------------*/
+
+@media only screen and (device-width : 414px) and (device-height : 736px) and (-webkit-device-pixel-ratio : 3) {
+.ca-menu ul li {
+	float: left;
+	width: 120px;
+	height: 120px;
+	padding: 6px 4px !important;
+}
+.footer-div {
+	position: fixed;
+	float: left;
+	margin-top: 6px;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+.login-div {
+	width: 100%;
+	float: left;
+	position: relative;
+	top: 140px;
+}
+}
+
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) { }
+
+/*------------------------------Retina Display---------------------------*/
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) { }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+.ca-menu ul li {
+	margin: 9px 4px;
+}
+.heading-div p {
+	font-size: 11px;
+	margin-bottom: 0;
+}
+.heading-div h4 {
+	font-size: 22px;
+}
+.main-content-area {
+	margin-top: 20px;
+}
+.footer-div {
+	position: fixed;
+	float: left;
+	margin-top: 6px;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+}
+}

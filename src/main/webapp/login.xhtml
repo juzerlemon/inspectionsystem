@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" lang="ar"
+      dir="rtl">
+<f:view transient="true">
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes"/>
+        </f:facet>
+        <title><ui:insert name="title">Inspection </ui:insert></title>
+
+        <h:outputStylesheet name="css/nanoscroller.css" library="primefaces-dp-police"/>
+        <h:outputStylesheet name="css/animate.min.css" library="primefaces-dp-police"/>
+        <h:outputStylesheet name="css/ripple.css" library="primefaces-dp-police"/>
+        <h:outputStylesheet name="css/bootstrap.min.css" library="primefaces-dp-police"/>
+        <h:outputStylesheet name="css/layout-dp.css" library="primefaces-dp-police"/>
+        <h:outputStylesheet name="css/dubai-police-font.css" library="primefaces-dp-police"/>
+        <h:outputStylesheet name="css/media3.css" library="primefaces-dp-police"/>
+        <h:outputStylesheet name="css/style.css" library="primefaces-dp-police"/>
+        <h:outputStylesheet name="css/style.css"/>
+        <ui:insert name="head"/>
+        
+        
+        
+    </h:head>
+
+    <h:body>
+        <h:form prependId="false" id="loginForm">
+              
+          
+            <div class="main-bg wow fadeIn wHighlight" data-wow-delay=".25s"></div>
+				<div class="main-header">
+					  <div class="col-md-6">
+					    <div class="left-logo"> 
+					    
+					    		 
+					    		<p:graphicImage name="images/dubai-govt.png" style="    width: 70%;
+    margin-top: 24px;
+    margin-right: auto;" data-wow-delay=".15s"
+									library="primefaces-dp-police-blue"  />
+					    </div>
+					  </div>
+					  <div class="col-md-6">
+					     	<div class="right-logo">
+					     		 
+					     		 <p:graphicImage style="width: 75%;
+    margin-top: 25px;
+    margin-right: 60px;" name="images/dubai-police2.png" data-wow-delay=".15s"
+									library="primefaces-dp-police-blue"  />
+					     	</div>
+					     
+					  </div>
+				</div>
+            <div class="login-div">
+                <div id="bg"/>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="form-login">
+                                <p:growl autoUpdate="true"/>
+                                <p:inputText id="username" styleClass="form-control input-sm chat-input" placeholder="#{msg.login_username}" required="true" value="#{loginBean.userName}"/>
+                                <p:password id="password" class="form-control input-sm chat-input" placeholder="#{msg.login_password}" required="true" value="#{loginBean.password}"/>
+                                <div class="wrapper">
+                                <p:commandButton styleClass="btn-color-2" icon="fa fa-lock" value="#{msg.login_loginBtn}" actionListener="#{loginBean.login}" id="submit"
+                                         style="float: right;margin-left: 15px; height: 40px;width: 160px;background-color: #003f4d;margin-right: 35%"/>
+                                    <!-- <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only login-btn-style"
+                                            style="background-color: #ffffff;border-radius: 3px;box-shadow: none;color: black;float: left;"
+                                            type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">#{msg.login_loginBtn}</span></button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footerr-div">
+                <p>#{msg.footer}</p>
+            </div>
+
+            <h:outputScript name="js/nanoscroller.js" library="primefaces-dp-police"/>
+            <h:outputScript name="js/layout.js" library="primefaces-dp-police"/>
+            <h:outputScript name="js/ripple.js" library="primefaces-dp-police"/>
+            <h:outputScript name="js/popper.min.js" library="primefaces-dp-police"/>
+            <h:outputScript name="js/bootstrap.min.js" library="primefaces-dp-police"/>
+            <h:outputScript name="js/top-menu.js" library="primefaces-dp-police"/>
+        </h:form>
+    </h:body>
+</f:view>
+</html>

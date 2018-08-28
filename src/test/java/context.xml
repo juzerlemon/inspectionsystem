@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- The contents of this file will be loaded for each web application -->
+<Context>
+
+
+    <!-- Default set of monitored resources -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+
+    <ResourceLink global="jdbc/inspectionpoint_ds" name="jdbc/inspectionpoint_ds" type="javax.sql.DataSource"/>
+
+    <Resource auth="Container"
+              driverClassName="oracle.jdbc.driver.OracleDriver"
+              factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+              logAbandoned="true"
+              maxActive="75"
+              maxIdle="10"
+              maxWait="10000"
+              name="jdbc/inspectionpoint_ds"
+              password="INSPECTION_POINTS"
+              removeAbandoned="true"
+              removeAbandonedTimeout="60"
+              scope="Shareable"
+              type="javax.sql.DataSource"
+              url="jdbc:oracle:thin:@10.0.33.31:1521/TESTINTRAPDB"
+              username="INSPECTION_POINTS"
+              validationQuery="SELECT 1 from dual"
+              testOnBorrow="true"/>
+
+</Context>

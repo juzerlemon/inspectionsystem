@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ae.gov.dubaipolice</groupId>
+    <artifactId>inspectionpoint</artifactId>
+    <version>0.1</version>
+    <packaging>war</packaging>
+
+    <url>http://interactive-ltd.com</url>
+    <description>Dubai Police Project.</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <primefaces.version>6.1</primefaces.version>
+        <primefaces-theme.version>1.0.10</primefaces-theme.version>         
+        <taglibs-standard.version>1.1.2</taglibs-standard.version>
+        <spring.version>4.3.5.RELEASE</spring.version>
+        <springsecurity.version>4.2.3.RELEASE</springsecurity.version>
+        <slf4j.version>1.7.19</slf4j.version>
+        <junit.version>4.12</junit.version>
+        <jsf.version>2.2.14</jsf.version>
+        <hibernate.validator.version>5.3.4.Final</hibernate.validator.version>
+        <entitymanager.version>5.2.5.Final</entitymanager.version>
+        <commons.collections.version>3.1</commons.collections.version>
+        <spring.jpa.data>1.10.6.RELEASE</spring.jpa.data>
+        <oracle.version>11.2.0.3</oracle.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <webflow.version>2.4.6.RELEASE</webflow.version>
+        <aspectj.version>1.8.10</aspectj.version>
+        <querydsl.version>4.1.4</querydsl.version>
+        <jboss.logging.version>3.3.0.Final</jboss.logging.version>
+        <validation.version>1.1.0.Final</validation.version>
+        <javax.inject.version>1</javax.inject.version>
+        <javax.el.version>2.2.6</javax.el.version>
+        <primefaces.extension.version>6.1.1</primefaces.extension.version>
+        <omnifaces.version>1.14</omnifaces.version>
+        <logback.version>1.2.3</logback.version>
+        <commons.beanutils.version>1.9.3</commons.beanutils.version>
+        <commons.lang3.version>3.4</commons.lang3.version>
+        <lombok.version>1.16.18</lombok.version>
+        <javax.servlet.api.version>3.1.0</javax.servlet.api.version>
+        <javax.servlet.jsp-api.version>2.2.1</javax.servlet.jsp-api.version>
+        <jstl.version>1.2</jstl.version>
+        <dpTheme.version>0.1</dpTheme.version>
+        <jaxws.ri.jdk.version>2.2.9-b14002</jaxws.ri.jdk.version>
+		<oracle.version>11.2.0.3</oracle.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>primefaces-maven-repository</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+        </repository>
+        <repository>
+            <id>codelds</id>
+            <url>https://code.lds.org/nexus/content/groups/main-repo</url>
+        </repository>
+    </repositories>
+	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>codelds</id>
+			<url>https://code.lds.org/nexus/content/groups/main-repo</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+    <dependencies>
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring.jpa.data}</version>
+        </dependency>
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.webflow</groupId>
+            <artifactId>spring-faces</artifactId>
+            <version>${webflow.version}</version>
+        </dependency>
+        <!-- aspectj -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <!-- JPA -->
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-jpa</artifactId>
+            <version>${querydsl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-core</artifactId>
+            <version>${querydsl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${entitymanager.version}</version><!--$NO-MVN-MAN-VER$ -->
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+            <version>${jboss.logging.version}</version>
+        </dependency>
+        <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.validator.version}</version><!--$NO-MVN-MAN-VER$ -->
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation.version}</version>
+        </dependency>
+
+        <!-- JSF 2 -->
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>${javax.inject.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-api</artifactId>
+            <version>${jsf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-impl</artifactId>
+            <version>${jsf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>${javax.el.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${primefaces.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>${primefaces-theme.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces.extensions</groupId>
+            <artifactId>primefaces-extensions</artifactId>
+            <version>${primefaces.extension.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.omnifaces</groupId>
+            <artifactId>omnifaces</artifactId>
+            <version>${omnifaces.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.primefaces.themes</groupId>
+            <artifactId>barcelona</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <!-- slf4j -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet.api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>${javax.servlet.jsp-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>${taglibs-standard.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>${oracle.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${commons.beanutils.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-ri-jdk</artifactId>
+            <version>${jaxws.ri.jdk.version}</version>
+            <type>pom</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ae.gov.dubaipolice</groupId>
+            <artifactId>dpTheme</artifactId>
+            <version>${dpTheme.version}</version>
+        </dependency>
+        <dependency>
+	       <groupId>org.omnifaces</groupId>
+	       <artifactId>omnifaces</artifactId>
+	       <version>1.10</version>
+       </dependency>
+       <dependency>
+         <groupId>com.data</groupId>
+	    <artifactId>weatherservice</artifactId>
+	     <version>0.0.1-SNAPSHOT</version>
+       </dependency>
+   
+   		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.5.0</version>
+		</dependency>
+		
+		<dependency>
+	       <groupId>javax.mail</groupId>
+	       <artifactId>mail</artifactId>
+	       <version>1.4</version>
+        </dependency>
+        
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>3.17</version>
+		</dependency>
+			
+			<dependency>
+	          <groupId>org.apache.poi</groupId>
+	          <artifactId>poi-ooxml</artifactId>
+	          <version>3.17</version>
+         </dependency>
+         
+         <!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
+				 <dependency>
+				    <groupId>net.sf.jasperreports</groupId>
+				    <artifactId>jasperreports</artifactId>
+				    <version>6.5.0</version>
+				</dependency>
+				
+				<dependency>
+				    <groupId>net.sf.jasperreports</groupId>
+				    <artifactId>jasperreports-fonts</artifactId>
+				    <version>6.0.0</version>
+				</dependency> 
+         
+ </dependencies>
+    
+    
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.18.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8080</port>
+                    <systemProperties>
+                        <CATALINA_OPTS>-Djava.awt.headless=true -Dfile.encoding=UTF-8
+                            -server -Xms2048m -Xmx2048m
+                            -XX:NewSize=1024m -XX:MaxNewSize=1024m -XX:PermSize=1024m
+                            -XX:MaxPermSize=1024m -XX:+DisableExplicitGC
+                            -XX:+UseConcMarkSweepGC
+                            -XX:+CMSIncrementalMode
+                            -XX:+CMSIncrementalPacing
+                            -XX:CMSIncrementalDutyCycleMin=0
+                            -XX:-TraceClassUnloading
+                        </CATALINA_OPTS>
+                        <!--The way this would look as a JVM parameter on the tomcat server's
+                        catalina.sh is -Dspring.profiles.default=grid or -Dspring.profiles.active=local -->
+                        <spring.profiles.active>dev</spring.profiles.active>
+                        <spring.profiles.default>dev</spring.profiles.default>
+                    </systemProperties>
+                    <contextFile>${basedir}/src/test/resources/maven-tomcat-plugin/context.xml</contextFile>
+                    <!--<serverXml>${basedir}/src/test/resources/maven-tomcat-plugin/server.xml</serverXml>-->
+                    <path>/${project.artifactId}</path>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.oracle</groupId>
+                        <artifactId>ojdbc6</artifactId>
+                        <version>${oracle.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+        
+        <pluginManagement>
+		  <plugins>
+        <!--This plugin's configuration is used to store Eclipse m2e ettings only. It has no influence on the Maven build itself.-->
+        <plugin>
+            <groupId>org.eclipse.m2e</groupId>
+            <artifactId>lifecycle-mapping</artifactId>
+            <version>1.0.0</version>
+            <configuration>
+                <lifecycleMappingMetadata>
+                    <pluginExecutions>
+                        <pluginExecution>
+                            <pluginExecutionFilter>
+                                <groupId>org.apache.maven.plugins</groupId>
+				                <artifactId>maven-install-plugin</artifactId>
+				                <versionRange>2.5.1</versionRange>
+				               <goals>
+				                 <goal>validate</goal>
+								 <goal>install-file</goal>
+								 <goal>install</goal>
+				               </goals>
+                            </pluginExecutionFilter>
+                            <action>
+                                <ignore></ignore>
+                            </action>
+                        </pluginExecution>
+                    </pluginExecutions>
+                </lifecycleMappingMetadata>
+            </configuration>
+        </plugin>
+    </plugins>
+		</pluginManagement>
+    </build>
+
+</project>

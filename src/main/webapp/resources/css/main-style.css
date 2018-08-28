@@ -1,0 +1,373 @@
+@charset "utf-8";
+/* CSS Document */
+
+.layout-wrapper .topbar {
+    position: fixed;
+    width: 100%;
+    background-color: #1ba558;
+    height: 60px;
+    box-sizing: border-box;
+    z-index: 100;
+ box-shadow: none;
+}
+
+body.main-body {
+    background-color: #1ba558;
+}
+
+.main-header {
+	background-color: #1ba558;
+	width: 100%;
+	float: left;
+	position: relative;
+	padding: 10px 0px;
+}
+.main-header .user-name-div {
+	    width: fit-content;
+    float: right;
+    position: relative;
+      margin: 5px 0;
+    margin-right: 12px;
+    top: 0;
+    background-color: #fff;
+    border-radius: 33px;
+    padding: 0px 20px;
+	margin-top: 19px;
+    font-size: 13px;
+}
+
+.main-header .role {
+	    width: fit-content;
+    float: right;
+    position: relative;
+       margin:0px 0;
+    margin-right: 12px;
+    top: 0;
+    background-color: #fff;
+    border-radius: 33px;
+    padding:0px 20px;
+font-size: 9px;
+}
+
+.main-header .user-image-div {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	float: right;
+	top: 5px;
+	position: relative;
+	margin-right: 9px;
+}
+.main-header .notification-div {
+	width: 27px;
+	float: left;
+	font-size: 19px;
+	color: #fff;
+	position: relative;
+	top: 15px;
+}
+.main-header .notification-count {
+	width: 25px;
+	height: 25px;
+	background-color: #ed002f;
+	border-radius: 50%;
+	position: absolute;
+	top: -16px;
+	right: -9px;
+	border: 1px solid #fff;
+	font-size: 12px;
+	text-align: center;
+	line-height: 25px;
+}
+.left-logo {
+	float: left;
+}
+.left-logo img {
+	width: 70%;
+	float: left;
+}
+.right-logo {
+	float: right;
+}
+.right-logo img {
+	width: 70%;
+	float: right;
+}
+
+.col-md-6 {
+    width: 50%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.user-name-div .profile-name{float:right;
+							text-align: right;
+							width:100%;}
+							
+.user-name-div .profile-role{float:right;
+							text-align: right;
+							width:100%;
+							font-size: 10px;}	
+							
+.ui-g{box-shadow:none !important;}		
+
+.heading-div-style{background-color:#fff;
+					color: #000;
+					padding: 4px 14px !important;
+					    border-radius: 3px 3px 0 0;}
+					
+					
+.heading-div-style h3{text-align: right;
+    margin: 0;
+    padding: 0;	}
+    
+    body .ui-fieldset {
+    padding: 8px 14px;
+    margin: 0;
+}
+
+body .ui-corner-all {
+    border-radius: 0px;
+}	
+.div-padding{padding:0 !important;
+			margin-top:10px;
+			border-radius: 0 0 3px 3px !important;}	
+
+
+.fieldset-div-style{border-radius: 0 0 3px 3px !important;} 
+			
+			
+.fieldset-div-style .ui-toolbar{padding: 0;
+    background-color: #1ba558;
+    box-shadow: none !important;}	
+    
+.fieldset-div-style .ui-widget-header{border: 1px solid transparent;}	
+
+
+
+
+.user-details-div{width:50%;
+				float:right}			
+			
+													
+.div-border-style{border:1px solid transparent;
+					height: 50px;}
+					
+.div-border-style input{ border-bottom: 1px solid #2d2d2d ;
+    border: none;
+    width: 80%;}	
+    
+.div-border-style .ui-selectonemenu{ border-bottom: 1px solid #2d2d2d;
+    border: none;
+    width: 80%;}	
+    
+  body .ui-paginator{    background-color: #797979 ;
+    border: none !important;}  	
+    
+body .ui-datatable thead th{
+ border-bottom: 2px solid #1ba558 !important;
+}	
+
+body .ui-datatable tbody tr td{
+   border-bottom: 2px solid #1ba558;
+}
+
+body .ui-radiobutton .ui-radiobutton-box .ui-icon-bullet {
+    background-color: #1ba558;
+    left: -3px;}
+    
+  body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+    border-color: #1ba558;
+    background-color: transparent;
+}	
+
+.btn-border-style .ui-widget-content{border:none !important}
+
+
+
+.ui-dialog .ui-dialog-content {
+    position: relative;
+    border: 0;
+    padding: .5em 1em;
+    background: 0;
+    overflow: auto;
+    zoom: 1;
+  
+    
+    overflow-x: hidden !important;
+}
+
+
+
+.modal-div-style form{    overflow: scroll;
+    height: 800px;
+    overflow-x: hidden;}
+    
+.modal-div-style .ui-toolbar {
+    background-color: #1ba558;
+    box-shadow:none;
+  padding: 0;
+}  
+
+
+.modal-div-style .ui-icon {
+    color: #757575 !important;
+}
+
+
+.modal-div-border{border:1px solid #1ba558 !important;
+				    height: 50px;
+					 }
+					 
+
+.tab-style-div .ui-panel-titlebar{width:98.5%;
+									background-color:#1ba558}	
+									
+.modal-div-style .ui-datatable tbody tr.ui-datatable-even {
+    background-color: transparent;
+}									
+    
+.btn-color-1 {
+    background-color: #2b78cf !important;
+    color: #fff !important;
+    outline: 0 !important;
+   padding: 6px 23px;
+    border-radius: 3px !important;
+    margin: 0px 4px !important;
+}
+
+.btn-color-2 {
+    background-color:#1ba558 !important;
+    color: #fff !important;
+    outline: 0 !important;
+ padding: 6px 23px;
+    border-radius: 3px !important;
+    margin: 0px 4px !important;
+}
+
+
+
+.btn-color-3 {
+    background-color: #e2574c !important;
+    color: #fff !important;
+    outline: 0 !important;
+    padding: 6px 23px;
+    border-radius: 3px !important;
+    margin: 0px 4px !important;
+}
+
+.btn-color-4 {
+    background-color: #999999 !important;
+    color: #fff !important;
+    outline: 0 !important;
+    padding: 6px 23px;
+    border-radius: 3px !important;
+    margin: 0px 4px !important;
+}
+
+.btn-color-5 {
+    background-color: #c4a733 !important;
+    color: #fff !important;
+    outline: 0 !important;
+    padding: 6px 23px;
+    border-radius: 3px !important;
+    margin: 0px 4px !important;
+}    
+
+.responsive{ width: 75%;
+    margin: 0 auto;}
+    
+
+
+.notification-div .ui-button {
+   background-color: transparent;
+    box-shadow:none;} 
+    
+ .notification-div .ui-button:hover {
+   background-color: transparent;
+    box-shadow:none;} 
+    
+ 
+    
+  .main-bg-login{    background-color: #1ba558;
+    width: 100%;
+    position: absolute;
+    height: 100%;}  
+    
+   .login-text-div{text-align: center;
+    color: #fff;} 
+    
+.login-form-div input {
+    width: 100%;
+    background-color: #ffffffe6;
+    padding: 6px;
+    color: #fff !important;
+    border-radius: 3px;
+}
+
+.login-main-div{position: relative;
+    margin-top: 22%;}
+ 
+    
+.login-text-div img{padding-bottom:25px;}
+
+.login-text-div p{ margin-bottom: 20px;}
+
+
+.login-btn-style{    background-color: #fff !important;
+    padding: 0px 48px !important;
+    font-size: 21px;
+    color: #1ba558 !important;
+    height: 36px !important;
+    border-radius: 3px !important;}	
+    
+  .ui-confirmdialog-yes{    background-color: #1ba558 !important;
+    color: #fff !important;
+    width: 45%;}  	
+    
+     .ui-confirmdialog-no{background-color: #e2574c !important;
+    color: #fff !important;
+    width: 45%;}  
+    
+    .ui-icon{color:#fff !important;}	
+    
+    .test2 .ui-toolbar {background-color: #1ba558;
+    box-shadow: none;
+    padding: 0;}
+    
+    .btn-style-4 .ui-widget-content{border:none !important}
+    
+  .test2 .ui-icon{color: #757575 !important;}
+  
+.test5  .ui-dialog-titlebar{    background-color: #1ba558 !important;
+    box-shadow: none;
+    color: #fff !important;}
+    
+.test-6 .ui-toolbar{    background-color: #1ba558 !important;
+    box-shadow: none;
+    color: #fff !important;
+    padding:0;}
+     
+.test-6 .ui-icon {
+    color: #757575 !important;
+}
+
+.test-6 .ui-widget-content {
+    border: none !important;
+}
+
+.test5 .ui-widget-content {
+    border: none !important;
+}
+
+/* abanob style for panel header */
+.ui-panel .ui-panel-titlebar{background-color: #1ba558;}
+/* abanob style for ddl text align */
+.ui-selectonemenu .ui-selectonemenu-label{text-align: right !important;}
+/* abanob style for login input text align */
+.login-form-div input{text-align: right !important;}
+

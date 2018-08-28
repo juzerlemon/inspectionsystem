@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
+<style> .ui-dialog {  right: 15%; }  </style>
+<h1 class="head bukra-bold">املأ الحقول لعرض التفاصيل </h1>
+	<!-- <p class="p-style-header"> املأ الحقول لعرض التفاصيل</p> -->
+	<div class="ui-g" style=" ">
+		<div class="main-div-bg-other"
+			style="padding-top: 30px !important; padding-bottom: 20px !important;   width:100%;direction:rtl;">
+			
+			<div class="ui-g-12 ui-md-10 ui-lg-4">
+				<p:inputText style=" width:80%" class="fullw txt-normal" id="depId" value="#{inspectionBean.departmentName}" readonly="true" maxlength="20"/>
+			</div>
+			<div class="ui-g-12 ui-md-2 ui-lg-2">
+				<p:outputLabel style="text-align:right" value="#{msg.department}" />
+			</div>
+			
+			<div class="ui-g-12 ui-md-10 ui-lg-4">
+				<p:inputText style=" width:80%" class="fullw txt-normal" id="reportId" value="#{inspectionMain.reportName}" readonly="true" maxlength="20"/>
+			</div>
+			<div class="ui-g-12 ui-md-2 ui-lg-2">
+				<p:outputLabel style="text-align:right" value="#{msg.reportname}" />
+			</div>
+			
+
+			<!-- <div class="ui-g-12 ui-md-2 ui-lg-1">
+			<p:outputLabel style="text-align:right"  value="#{msg.inspectionNumber}" />
+		</div>
+		<div class="ui-g-12 ui-md-10 ui-lg-5">
+		
+		<p:outputLabel  style="text-align:left;" class="fullw txt-normal" value="#{inspectionMain.inspectionId}"  />
+		</div> -->
+
+
+			<div class="ui-g-12 ui-md-10 ui-lg-4">
+				 
+			</div>
+			<div class="ui-g-12 ui-md-2 ui-lg-2">
+				 
+			</div>
+			<div class="ui-g-12 ui-md-10 ui-lg-4">
+				<p:inputText style=" width:80%" class="fullw txt-normal"  value="#{inspectionMain.inspectionYear}" readonly="true"/>
+			</div>
+			<div class="ui-g-12 ui-md-2 ui-lg-2">
+				<p:outputLabel style="text-align:right" value="#{msg.inspectionyear}" />
+			</div>
+			
+			
+
+		</div>
+	</div>
+
+	<div class="ui-g">
+	<h1 class="bukra-bold divheader">نقطة التفتيش </h1>
+	<!-- <p class="p-style-header"> نقطة التفتيش</p> -->
+	<div class="  main-div-bg-other"   >
+		<p:panel id="pnl_details_inspection" styleClass="heading-design3"
+			style="background-color: rgba(211, 211, 211, 0.51);    ">
+			 
+			<p:dataTable id="tbl_details_view_inspection" class="tbl-padding" dir="rtl" emptyMessage="#{msg.no_record_found}"
+				value="#{inspectionBean.inspectionpointList}" style="padding:20px !important" currentPageReportTemplate="{startRecord} إلى {endRecord} من {totalRecords}"
+				var="inspection" paginator="#{inspectionBean.inspectionpointList.size() gt 5 ? 'true' : 'false'}"
+				rows="10" paginatorTemplate="{RowsPerPageDropdown} {LastPageLink}  {NextPageLink} {CurrentPageReport}  {PreviousPageLink} {FirstPageLink}"
+				rowsPerPageTemplate="5" styleClass="width:100%" paginatorPosition="bottom" rowIndexVar="index" rowKey="#{inspection.id}">
+				
+				<p:column headerText="#" style="width:5%;    text-align: center;">
+					<h:outputText class="txt-normal" value="#{index+1}" />
+				</p:column>
+				<p:column headerText="#{msg.pointname}" style="width:30%;    text-align: center;">
+					<h:outputText class="txt-normal" value="#{inspection.pointName}" />
+				</p:column>
+				<p:column headerText="#{msg.leader}" style="width:30%;    text-align: center;">
+					<p:selectBooleanCheckbox value="#{inspection.leaderBol}" disabled="true"></p:selectBooleanCheckbox>
+				</p:column>
+
+				<p:column headerText="#{msg.supervisor}" style="width:30%;    text-align: center;">
+					<p:selectBooleanCheckbox value="#{inspection.supervisorBol}" disabled="true"></p:selectBooleanCheckbox>
+				</p:column>
+				<p:column headerText="#" style="width:10%;">
+					<p:commandLink style="float:right;" styleClass="red-btn" update=":inspectionForm:insdetailsDialog"
+						actionListener="#{inspectionBean.editDetailsInspectionPoint(inspection)}" process="@this">
+						<i class="fa fa-pencil" title="#{msg.edit}" />
+					</p:commandLink>
+				</p:column>
+			</p:dataTable>
+
+		</p:panel>
+		</div>
+		<!-- <p class="p-style-header"> نقطة التفتيش</p> -->
+	<h1 class="bukra-bold divheader">نقطة التفتيش </h1>
+             
+            <div class="  main-div-bg-other"   >
+            <p:panel   styleClass="heading-design3"
+			style="background-color: rgba(211, 211, 211, 0.51);     margin-top: 17px; margin-bottom: 17px;   ">
+          <p:accordionPanel activeIndex="-1" style=" border: solid 1px #bcbcbd;    border-radius: 11px;" id="accordionId" >
+        <p:tab title="#{inspectionBean.departmentName}" id="tabId">
+            <div class="col-lg-12 accor-head">
+                        <div class="accor-right-head"> 
+                        <h:outputText style="float:right ;margin-left: 15px;" value="#{msg.reportname}:"/>
+                        <h:outputText style="float:right;" value="#{inspectionMain.reportName}" />
+                       			
+                        </div>
+                        <div class="accor-date"> 
+		                        <h:outputText style="float:left;" value="#{inspectionMain.ipEntereddate}"><f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime></h:outputText>
+		                        <h:outputText style="float:left ;    margin-left: 15px;" value="#{msg.date}:"/>
+		                </div>
+            </div>
+            <h:panelGrid columns="2" cellpadding="10">
+                 
+                <p:dataTable id="tbl_details_view_inspection" class="tbl-padding" dir="rtl" emptyMessage="#{msg.no_record_found}"
+				value="#{inspectionBean.inspectionpointList}" style="padding:20px !important" currentPageReportTemplate="{startRecord} إلى {endRecord} من {totalRecords}"
+				var="inspection" paginator="#{inspectionBean.inspectionpointList.size() gt 5 ? 'true' : 'false'}"
+				rows="10" paginatorTemplate="{RowsPerPageDropdown} {LastPageLink}  {NextPageLink} {CurrentPageReport}  {PreviousPageLink} {FirstPageLink}"
+				rowsPerPageTemplate="5" styleClass="width:100%" paginatorPosition="bottom" rowIndexVar="index" rowKey="#{inspection.id}">
+				
+                   
+                 <p:column headerText="م" style="width:5%;    text-align: center;">
+					<h:outputText class="txt-normal" value="#{index+1}" />
+				</p:column>
+				<p:column headerText="#{msg.pointname}" style="width:10%;    text-align: center;">
+					<h:outputText class="txt-normal" value="#{inspection.pointName}" />
+				</p:column>
+				<p:column headerText="#{msg.targeted}" style="width:15%;    text-align: center;" styleClass="pt_one">
+					<h:outputText class="txt-normal" value="#{inspection.targeted}" />
+				</p:column>
+
+				<p:column headerText="#{msg.investigator}" style="width:10%;    text-align: center;" styleClass="pt_one">
+					<h:outputText class="txt-normal" value="#{inspection.investigator}" />
+				</p:column>
+				<p:column headerText="#{msg.uninvestigator}" style="width:10%;    text-align: center;" styleClass="pt_one">
+					<h:outputText class="txt-normal" value="#{inspection.unInvestigator}" />
+				</p:column>
+                 <p:column  headerText="#{msg.actiontaken}" styleClass="pt_one" style="width:25%;    text-align: center;">
+                     <h:outputText  class="txt-normal " value="#{inspection.actionTaken}" />
+				</p:column>
+                    <p:column headerText="#{msg.recommandation}" styleClass="pt_one" style="width:25%;    text-align: center;">
+					<h:outputText   class="txt-normal " value="#{inspection.recommandation}" />
+				</p:column>
+			</p:dataTable>
+            </h:panelGrid>
+        </p:tab>
+        </p:accordionPanel>
+        </p:panel>
+                 
+                 </div>
+                
+	</div>
+    
+
+    <p:dialog style="left: 286px !important;top: 25px;" id="insdetailsDialog" dir="rtl" widgetVar="insdetailsDialog" modal="true" showEffect="fade" hideEffect="fade" width="70%" height="800px ;" >
+		<ui:include src="dlg/inspectionDetailsDlg.xhtml"/>
+		<div class="ui-g"  >
+			
+		</div>
+	</p:dialog>
+	
+	<div class="btn-div-2 onlybtn" >
+			<!-- rendered="#{inspectionBean.pointEvalFlag}" -->
+				<p:commandButton style="margin-right: 48%" value="#{msg.back_btn}" styleClass=" green-btn-form btn btn-cancel btn-color-2"   actionListener="#{inspectionBean.backToList}" update=":inspectionForm"   />
+				<p:commandButton style="float:left ; margin-left: 12px;"  rendered="#{inspectionBean.pointEvalFlag and inspectionBean.approvalFlag}" value="#{msg.approval}" styleClass="green-btn-form btn btn-cancel btn-color-2" actionListener="#{inspectionBean.requestForApproval}" update=":inspectionForm:pnl_details_inspection, :inspectionForm:message"  /> 
+				<p:commandButton style="float:left; margin-left: 12px;"  rendered="#{inspectionBean.pointEvalFlag and inspectionBean.approvalFlag}" value="#{msg.rejectbtn}" styleClass="green-btn-form btn btn-cancel btn-color-2" actionListener="#{inspectionBean.requestForReject}" update=":inspectionForm:pnl_details_inspection, :inspectionForm:message"  /> 
+			</div>
+		 
+             
+
+</h:body>
+</html>

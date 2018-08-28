@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'DubaiRegular';
+	src: url("../../fonts/DubaiRegular.eot.xhtml")  format('embedded-opentype'),  url("../../fonts/DubaiRegular.eot.xhtml") format('eot'),  url("fonts/DubaiRegular.woff.xhtml") format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+* {
+	font-family: 'DubaiRegular';
+}

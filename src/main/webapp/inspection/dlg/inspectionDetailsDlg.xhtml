@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition>
+	 
+            <div class="main-div-bg-other"  >
+			<div class="ui-g" style="padding-top: 15px !important;padding-bottom: 20px !important; margin-top: 25px;margin-bottom: 15px;  margin-left: 10px;margin-right: 10px;">
+				 
+				<div class="ui-g-12 ui-md-2 ui-lg-2">
+					<p:outputLabel value="#{msg.pointname}*" />
+				</div>
+				<div class="ui-g-12 ui-md-10 ui-lg-4">
+					<p:inputText class="fullw txt-normal" value="#{inspectionBean.inspectionpoint.pointName}" maxlength="20" />
+				</div>
+				
+				<div class="ui-g-12 ui-md-2 ui-lg-2">
+					<p:outputLabel value="#{msg.targeted}" />
+				</div>
+				<div class="ui-g-12 ui-md-10 ui-lg-4">
+					<p:inputText class="fullw txt-normal" value="#{inspectionBean.inspectionpoint.targeted}" maxlength="20"/>
+				</div>
+                       
+				<!-- rendered="#{inspectionBean.inspectionpoint.leaderBol}" -->
+				<h:panelGroup rendered="#{inspectionBean.inspectionpoint.leaderBol}">
+				<div class="ui-g-12 ui-md-2 ui-lg-2">
+					<p:outputLabel value="#{msg.leader}" />
+				</div>
+				<div class="ui-g-12 ui-md-10 ui-lg-4">
+					<p:inputText class="fullw txt-normal" value="#{inspectionBean.inspectionpoint.leader}" maxlength="20"/>
+				</div>
+				</h:panelGroup>
+				<!-- rendered="#{inspectionBean.inspectionpoint.supervisorBol}" -->
+				<h:panelGroup rendered="#{inspectionBean.inspectionpoint.supervisorBol}">
+				<div class="ui-g-12 ui-md-2 ui-lg-2">
+					<p:outputLabel value="#{msg.supervisor}" />
+				</div>
+				<div class="ui-g-12 ui-md-10 ui-lg-4">
+					<p:inputText class="fullw txt-normal" value="#{inspectionBean.inspectionpoint.supervisor}" maxlength="20"/>
+				</div>
+				</h:panelGroup>
+				
+				
+				<div class="ui-g-12 ui-md-2 ui-lg-2">
+					<p:outputLabel value="#{msg.investigator}" />
+				</div>
+				<div class="ui-g-12 ui-md-10 ui-lg-4">
+					<p:inputText class="fullw txt-normal" value="#{inspectionBean.inspectionpoint.investigator}" maxlength="20"/>
+				</div>
+                                
+				
+				<div class="ui-g-12 ui-md-2 ui-lg-2">
+				<p:outputLabel value="#{msg.uninvestigator}" />
+				</div>
+				<div class="ui-g-12 ui-md-10 ui-lg-4">
+					<p:inputText class="fullw txt-normal" value="#{inspectionBean.inspectionpoint.unInvestigator}" maxlength="20"/>
+				</div>
+		        </div>
+				 </div>
+				 <p  >#{msg.actiontaken}</p>
+                  <div class="main-div-bg-other"  >              
+				 
+				
+<!--				<p:textEditor    height="150" style="margin-bottom:10px"/>-->
+                                <p:inputTextarea rows="6" cols="200" maxlength="100" counter="display" counterTemplate="{0} #{msg.remnchrctr}"  value="#{inspectionBean.inspectionpoint.actionTaken}" style="margin-top: 23px;
+    border-radius: 15px;border-top: 1px solid rgb(189, 189, 189);border-left: 1px solid rgb(189, 189, 189); border-right: 1px solid rgb(189, 189, 189);  width: 100% !important;" />
+                                 <h:outputText style="color: #426c94; " id="display" />
+                                 
+				
+				 </div>
+				 <p  >#{msg.recommandation}</p>
+				 <div class="main-div-bg-other"  > 
+				 
+				
+<!--				<p:textEditor   height="150" style="margin-bottom:10px"/>-->
+				<p:inputTextarea rows="6" cols="200" maxlength="100" counter="display1" counterTemplate="{0} #{msg.remnchrctr}"  value="#{inspectionBean.inspectionpoint.recommandation}" style="margin-top: 23px;
+    border-radius: 15px;border-top: 1px solid rgb(189, 189, 189);border-left: 1px solid rgb(189, 189, 189); border-right: 1px solid rgb(189, 189, 189);  width: 100% !important;" />
+                                 <h:outputText style="color: #426c94; " id="display1" />
+                                  </div>
+                                 
+				<div class="btn-div-2 onlybtn" >
+				<p:commandButton style="float:left" value="#{msg.save_btn}" actionListener="#{inspectionBean.saveInspectionDeatils}" styleClass="green-btn-form btn btn-cancel btn-color-2"
+					update=":inspectionForm:pnl_details_inspection, :inspectionForm:message,inspectionForm:accordionId:tbl_details_view_inspection" />
+				<p:commandButton styleClass="green-btn-form btn btn-cancel btn-color-2" style="float:left;    margin-left: 15px;" value="#{msg.cancel}" onclick="PF('insdetailsDialog').hide()" />
+			</div>
+				 
+				 
+				
+	        
+	          
+</ui:composition>
+</html>

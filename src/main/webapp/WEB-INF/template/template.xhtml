@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" lang="#{localeBean.language}"
+      dir="rtl">
+<f:view locale="#{localeBean.locale}">
+    <h:head>
+        <meta charset="utf-8"/>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes"/>
+        </f:facet>
+        <title><ui:insert name="title">#{msg.application_name}</ui:insert></title>
+
+        <h:outputStylesheet name="css/nanoscroller.css" library="primefaces-dp-police"/>
+        <h:outputStylesheet name="css/animate.min.css" library="primefaces-dp-police"/>
+        <h:outputStylesheet name="css/ripple.css" library="primefaces-dp-police"/>
+        <h:outputStylesheet name="css/bootstrap.min.css" library="primefaces-dp-police"/>
+        <h:outputStylesheet name="css/layout-dp.css" library="primefaces-dp-police-blue"/>
+        <h:outputStylesheet name="css/style.css" library="primefaces-dp-police-blue"/>
+                
+        <ui:insert name="head"/>
+       <!--  <script type = "text/javascript" >
+            function preventBack(){window.history.forward();}
+            setTimeout("preventBack()", 0);
+            window.onunload=function(){null};
+        </script> -->
+    </h:head>
+
+    <h:body>
+        <h:panelGroup layout="block" styleClass="main-bg2"/>
+        <h:panelGroup layout="block" styleClass="layout-wrapper layout-rtl">
+            <ui:include src="./topbar.xhtml"/>
+            <br/>
+            <h:panelGroup layout="block" styleClass="responsive">
+                <ui:insert name="content">Main Content</ui:insert>
+            </h:panelGroup>
+        </h:panelGroup>
+            
+    </h:body>
+
+    <h:outputScript name="js/nanoscroller.js" library="primefaces-dp-police"/>
+    <h:outputScript name="js/layout.js" library="primefaces-dp-police"/>
+    <h:outputScript name="js/ripple.js" library="primefaces-dp-police"/>
+    <h:outputScript name="js/popper.min.js" library="primefaces-dp-police"/>
+    <h:outputScript name="js/bootstrap.min.js" library="primefaces-dp-police"/>
+    <h:outputScript name="js/wow.min.js" library="primefaces-dp-police"/>
+    <h:outputScript name="js/index.js" library="primefaces-dp-police"/>
+    <h:outputScript name="js/top-menu.js" library="primefaces-dp-police"/>
+     <h:outputScript name="js/jquery-3.3.1.min.js" library="jquery"/>  
+
+</f:view>
+</html>

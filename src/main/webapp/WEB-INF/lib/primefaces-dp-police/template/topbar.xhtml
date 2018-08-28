@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+    <h:form>
+        <div class="topbar" style="padding: 0;">
+            <div style="padding: 10px 10px; padding-top: 30px;">
+                <div class="col-6-div">
+                    <a href="#{request.contextPath}/">
+                        <p:graphicImage name="images/dubai-govt.png" library="primefaces-dp-police"
+                                        styleClass="img-responsive left-logo"/>
+                    </a>
+                </div>
+                <div class="col-6-div">
+                    <a href="#{request.contextPath}/">
+                        <p:graphicImage name="images/dubai-police.png" library="primefaces-dp-police"
+                                        styleClass="img-responsive right-logo"/>
+                    </a>
+                </div>
+            </div>
+            <div class="div-style3">
+                <a href="#{request.contextPath}/logout">
+                    <i class="fa fa-power-off logout-icon-div" aria-hidden="true"></i>
+                </a>
+                <div class="menu-section">
+                    <div class="menu-toggle">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </div>
+                    <nav>
+                        <ul role="navigation" class="hidden">
+                            <li><p:graphicImage name="images/logooi.png" library="primefaces-dp-police"
+                                                styleClass="menu-inner-logo"/></li>
+                            <ui:repeat value="#{templateBean.menusList}" var="menu">
+                                <li><a href="#{menu.url}">#{menu.name}</a></li>
+                            </ui:repeat>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </h:form>
+</ui:composition>

@@ -1,0 +1,82 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/WEB-INF/template/template.xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	>
+ 
+
+	<ui:define name="content">
+		<h:form prependId="false" id="indexformId" styleClass="switch-style  " style="display:none;">
+			<p:commandLink style="    color: white; font-weight: bold; font-size: 21px;" actionListener="#{localeBean.setLanguage(localeBean.language == 'ar' ?'en':'ar')}" ajax="false"
+			value="#{localeBean.language=='ar'?'English':'عربي'}">
+			</p:commandLink>
+			<!-- <span style="margin-right: 6px; font-weight: bold;">EN</span>
+			<p:inputSwitch value="#{indextBean.controlLang}" onLabel="ع" offLabel="E">
+				<p:ajax listener="#{indextBean.findLocale}" update="indexformId" />
+			</p:inputSwitch>
+			<span style="margin-right: 6px; font-size: 1.3em; font-weight: bold;">
+				ع </span> -->
+			
+		</h:form>
+
+		 
+		<p:fieldset class="cust-fieldset-margin-top fieldset-div-style" style="    background-color: transparent !important;box-shadow:none !important;">
+
+	 
+			<div class="ui-g" dir="#{localeBean.language=='ar'?'rtl':'rtl'}">	 
+					 <div class="main-content-area">
+   <div class="container container-dash">
+		    <div class="heading-div wow fadeIn wHighlight" data-wow-delay=".50s" >
+		    <p:graphicImage name="images/zayed.png" data-wow-delay=".15s"
+								library="primefaces-dp-police-blue"
+								styleClass=" logo2" /><br></br>
+		    
+		      <h4>هناك حقيقة مثبت</h4><br></br>
+		     <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء أو استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد</p>
+		    </div>
+    <div class="ca-menu">
+<ul>
+        <li class="blur-div wow fadeInDown wHighlight" data-wow-delay=".10s"> 
+        <a id="sys_man" href="#{request.contextPath}/inspection/index.xhtml?faces-redirect=true">
+            <p:graphicImage name="images/icon1.png" data-wow-delay=".15s"
+						library="primefaces-dp-police-blue" styleClass=" img-menu    " />
+          <p>#{msg.inspectionpoint}</p>
+          </a> </li>
+         <li class="blur-div wow fadeInDown wHighlight" data-wow-delay=".20s"> <a href="#">
+          
+            <p:graphicImage name="images/icon2.png" data-wow-delay=".15s"
+						library="primefaces-dp-police-blue" styleClass=" img-menu    " />
+          <p>تسجيل</p>
+          </a> </li>
+        <li class="blur-div wow fadeInDown wHighlight" data-wow-delay=".30s"> <a href="#">
+           
+            <p:graphicImage name="images/icon3.png" data-wow-delay=".15s"
+						library="primefaces-dp-police-blue" styleClass=" img-menu    " />
+          <p>الجديد</p>
+          </a> </li>
+        <li class="blur-div wow fadeInDown wHighlight" data-wow-delay=".40s"> <a href="#">
+            <p:graphicImage name="images/icon4.png" data-wow-delay=".15s"
+						library="primefaces-dp-police-blue" styleClass=" img-menu    " />
+          <p>خبراء</p>
+          </a> </li>
+      <li class="blur-div wow fadeInDown wHighlight" data-wow-delay=".50s"> <a id="sys_man"
+							href="#">
+            <p:graphicImage name="images/icon5.png" data-wow-delay=".15s"
+						library="primefaces-dp-police-blue" styleClass=" img-menu    " />
+          <p>صفحة</p>
+          </a> </li>
+         
+      </ul>
+    </div>
+  </div>
+</div> </div> </p:fieldset>
+					<div class=" main-page-text-div wow fadeIn wHighlight  "
+						data-wow-delay=".25s">
+						<p style="direction: ltr; bottom: 0px; position: fixed; margin: 0 120px 10px 0;">©
+							2017 All Rights Reserved, Dubai Police.</p>
+					</div>
+				 
+	</ui:define>
+</ui:composition>

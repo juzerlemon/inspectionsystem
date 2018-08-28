@@ -1,0 +1,89 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+    <h:form>
+    			<div class="menu-section">
+                   
+                    <nav>
+                            <ul role="navigation" class="hidden">
+								      <li><a href="#"><p:graphicImage name="images/logooi.png" library="primefaces-dp-police" styleClass="menu-inner-logo"/></a></li>
+                                      <li><a href="#{request.contextPath}/index.xhtml?faces-redirect=true">#{msg.inspectionpoint}</a></li>
+								      <li><a >#{msg.system_manage}</a></li>
+								      <li><a >#{msg.mission}</a></li>
+								      <li><a >Testing</a></li>
+								      <li><a href="#{request.contextPath}/logout" style="padding-top:30px;"> <i class="fa fa-power-off" aria-hidden="true"></i></a></li>
+						     </ul>
+                         
+                    </nav>
+                </div>
+                <div class="main-header ">
+					<div class="ui-g-6">
+						<div class="left-logo">
+							<div class="menu-toggle">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </div>
+						</div>
+					 
+					
+					</div>
+					 
+					<div class="ui-g-6">
+						<div class="right-logo">
+							<p:graphicImage name="images/dubai-police2.png" data-wow-delay=".15s"
+									library="primefaces-dp-police-blue"  />
+						</div>
+							 
+							<p:graphicImage name="images/user.JPG" library="primefaces-dp-police-blue" 
+                    styleClass="user-image-div"/>
+							<!--  <img
+							src="http://newintranet/storage1/images/Staff_Directory/Staff_Photo/#{LoginBean.secertUser.militaryFlagStr}/Photograph/P#{LoginBean.secertUser.grp}.JPG"
+							class="user-image-div" /> -->
+							<p class="user-name-div" id="usernameId">#{localeBean.language=='en'?request.userPrincipal.principal.dpEmpMvGrp.slmNameE:request.userPrincipal.principal.dpEmpMvGrp.fullName}</p>
+					</div>
+				</div>
+                
+               <!--  <div class="main-header">
+					  <div class="col-md-6">
+					    <div class="left-logo"> 
+					     <div class="menu-toggle">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </div>
+					    		 
+					    		<p:graphicImage name="images/dubai-govt.png" data-wow-delay=".15s"
+									library="primefaces-dp-police-blue"  />
+					    </div>
+					  </div>
+					  <div class="col-md-6">
+					     	<div class="right-logo">
+					     		 
+					     		 <p:graphicImage name="images/dubai-police2.png" data-wow-delay=".15s"
+									library="primefaces-dp-police-blue"  />
+					     	</div>
+					    		 
+					    		<p class="user-name-div" id="usernameId">#{localeBean.language=='en'?request.userPrincipal.principal.dpEmpMvGrp.slmNameE:request.userPrincipal.principal.dpEmpMvGrp.fullName}</p>
+                    <p:graphicImage value="http://dpf-intra03:7777/storage1/images/Staff_Directory/Staff_Photo/#{request.userPrincipal.principal.dpEmpMvGrp.slmMilitaryFName}/Photograph/P#{request.userPrincipal.principal.grpNumber}.JPG"
+                    styleClass="user-img-div"/>
+                    <p:graphicImage name="images/user.JPG" library="primefaces-dp-police-blue" 
+                    styleClass="user-img-div"/>
+					      
+					  </div>
+				</div> -->
+				  
+       <script>
+$(document).ready(function() {
+  function setHeight() {
+    windowHeight = $(window).innerHeight();
+    $('.main-div-bg').css('min-height', windowHeight);
+  };
+  setHeight();
+  
+  $(window).resize(function() {
+    setHeight();
+  });
+});
+</script>
+    </h:form>
+</ui:composition>
